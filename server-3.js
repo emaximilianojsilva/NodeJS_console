@@ -4,16 +4,16 @@ var express = require('express'),
 
 var app = express();
 // inicializa las vistas de swig
-swig.setDefaults({ cache: false });
-//	swig.init({
-	//	cache : false
-	//});
+
+	swig.init({
+		cache : false
+	});
 
 	//inicializa los templets
 	// vistas de Engine
 	app.engine('.html', cons.swig);
 	app.set('view engine','html');
-	app.set('views', './views');//creamos un folder para las vistas
+	app.set('view', './views');//creamos un folder para las vistas
 
 //Staic file
 	app.use( express.static('./public'));
@@ -22,7 +22,7 @@ swig.setDefaults({ cache: false });
 	app.use( express.bodyParser() );
 	app.use( express.cookieParser() );
 
-var mensajes = [],
+      var mensajes = [],
 		ress = [];
 
 app.get('/', function(req, res) {
@@ -30,7 +30,7 @@ app.get('/', function(req, res) {
 });
 
 
-app.post('/mensajes/new', function (req, res) {
+app.send('/mensajes/new', function (req, res) {
 	mensajes.push(req.body.mensaje);
 
 	ress.forEach(function (res) {
