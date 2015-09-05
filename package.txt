@@ -1,0 +1,11 @@
+{
+	 "name": "curso",
+	 "version": "*",
+    "dependencies": {
+        "express": "*",
+        "jade":"*",
+	      "swig":"*",
+        "consolidate": "*",
+        "socket.io": "*"
+    }
+}
