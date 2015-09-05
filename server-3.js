@@ -9,7 +9,7 @@ var app = express();
 		cache : false
 	});
 
-	//inicializa los templets
+	//inicializa los templeates
 	// vistas de Engine
 	app.engine('.html', cons.swig);
 	app.set('view engine','html');
